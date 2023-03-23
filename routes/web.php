@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // ruta buscada
 
 //Ruta para el index de la pagina
-Route::get('/', 'ProductController@main')->name('main');
+Route::get('/', 'MainController@index')->name('main');
 
 //Ruta para mostrar los productos
 Route::get('products', 'ProductController@index')->name('products.index');
@@ -27,7 +27,7 @@ Route::get('products', 'ProductController@index')->name('products.index');
 Route::get('products/create', 'ProductController@create')->name('products.create');
 
 //Ruta para guardar los datos por peticion post
-Route::post('products', 'ProductController@store')->name('products.store ');
+Route::post('products', 'ProductController@store')->name('products.store');
 
 //Ruta para mostrar un producto por ID
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
