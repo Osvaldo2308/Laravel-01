@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -13,6 +14,8 @@ class MainController extends Controller
         //dump of die (stop of aplication)
         // dd();
 
-        return view('welcome');
+        return view('welcome')->with([
+            'products'=>Product::all(),
+        ]);
     }
 }

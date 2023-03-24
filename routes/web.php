@@ -21,28 +21,7 @@ use Illuminate\Support\Facades\Route;
 //Ruta para el index de la pagina
 Route::get('/', 'MainController@index')->name('main');
 
-//Ruta para mostrar los productos
-Route::get('products', 'ProductController@index')->name('products.index');
-
-//Ruta para el formulario de crear productos
-Route::get('products/create', 'ProductController@create')->name('products.create');
-
-//Ruta para guardar los datos por peticion post
-Route::post('products', 'ProductController@store')->name('products.store');
-
-//Ruta para mostrar un producto por ID
-Route::get('products/{product}', 'ProductController@show')->name('products.show');
-// Route::get('products/{product:title}', 'ProductController@show')->name('products.show');
-
-
-//Ruta para editar un producto por id
-Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
-
-//Ruta para actualizar un proucto por id
-Route::match(['put', 'patch'], 'products/{product}', 'ProductController@update')->name('products.update');
-
-//Ruta para eliminar un producto por id
-Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');
+Route::resource('products', 'ProductController');
 
 Auth::routes();
 
