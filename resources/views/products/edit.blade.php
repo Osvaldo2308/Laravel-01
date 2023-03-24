@@ -1,4 +1,4 @@
-@extends('layaout.master')
+@extends('layouts.app')
 @section('content')
     <h1>Edit Product</h1>
     <form method="POST" action="{{ route('products.update', ['product'=> $product->id]) }}">
@@ -27,7 +27,7 @@
                 <option {{old('status') == 'unavailable' ? 'selected' : ($product-> status == 'unavailable' ? 'selected': '')}} value="unavailable">Unavailable</option>
             </select>
         </div>
-        <div class="form-row">
+        <div class="form-row mt-3">
             <button type="submit" class="btn btn-primary btn-lg">Edit Product</button>
         </div>
     </form>

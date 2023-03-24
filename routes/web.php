@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::post('products', 'ProductController@store')->name('products.store');
 
 //Ruta para mostrar un producto por ID
 Route::get('products/{product}', 'ProductController@show')->name('products.show');
+// Route::get('products/{product:title}', 'ProductController@show')->name('products.show');
+
 
 //Ruta para editar un producto por id
 Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit');
